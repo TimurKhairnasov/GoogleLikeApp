@@ -5,15 +5,210 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FFFFFF"
         tools:context=".MainActivity">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+            android:id="@+id/title"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:src="@drawable/google"
+            android:layout_marginTop="50dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_white_with_raduis"
+            android:elevation="5dp"
+            android:padding="10dp"
+            app:alignContent="center"
+            app:justifyContent="space_between"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <EditText
+                android:id="@+id/input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Скажите &quot;Ok Google&quot;"
+                android:gravity="end"
+                app:layout_flexGrow="1"
+                app:layout_alignSelf="center"
+                android:background="#00000000"/>
+
+        <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/google_mic"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                app:layout_alignSelf="center"
+                app:layout_flexShrink="0"/>
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/weather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_with_raduis"
+            android:elevation="5dp"
+            android:padding="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:alignContent="center"
+            app:justifyContent="space_between"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/sun"
+                android:layout_margin="5dp"/>
+
+        <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                app:layout_alignSelf="stretch"
+                app:flexDirection="column"
+                app:layout_flexGrow="1">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Оренбург: -16˚C"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="6dp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Переменная облачность"
+                    android:textColor="#B5B5B5"
+                    android:textSize="12sp"/>
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_alignSelf="stretch"
+                app:flexDirection="column">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-14˚C/-19˚C"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="6dp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10% сегодня"
+                    android:textColor="#B5B5B5"
+                    android:textSize="12sp"
+                    android:drawableStart="@drawable/ic_beach_access_black_24dp"/>
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_more_vert_black_24dp"
+                android:layout_marginStart="10dp"/>
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_white_with_raduis"
+            android:elevation="5dp"
+            android:padding="10dp"
+            app:alignContent="center"
+            app:flexDirection="column"
+            app:justifyContent="space_between"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weather"
+            app:layout_constraintRight_toRightOf="parent">
+
+        <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:justifyContent="space_between">
+
+            <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/android"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Android-разработка"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:layout_marginStart="10dp"
+                    app:layout_alignSelf="center"
+                    app:layout_flexGrow="1"/>
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_more_vert_black_24dp"
+                    android:layout_marginStart="10dp"/>
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_flexGrow="1"
+                    app:flexDirection="column">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:text="В Android-школу Blogman \nпришли 5 разработчиков"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14dp"
+                        android:textColor="#B4B4B4"
+                        android:text="В Android-школу Blogman \nпришли 5 разработчиков"/>
+            </com.google.android.flexbox.FlexboxLayout>
+
+            <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/android"
+            />
+
+        </com.google.android.flexbox.FlexboxLayout>
+
+    </com.google.android.flexbox.FlexboxLayout>
 
 </android.support.constraint.ConstraintLayout>
